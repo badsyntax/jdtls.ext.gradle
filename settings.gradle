@@ -1,0 +1,4 @@
+rootProject.name = 'gradletasks'
+include(':gradletasks.core')
+include(':gradletasks.test')
+include(':gradletasks.site')

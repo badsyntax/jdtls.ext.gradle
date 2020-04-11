@@ -1,0 +1,7 @@
+description = 'gradletasks :: core'
+
+dependencies {
+    compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.7.0'
+    compile group: 'org.eclipse.jdt.ls', name: 'org.eclipse.jdt.ls.core', version: '0.53.0.20200402130307'
+}
+

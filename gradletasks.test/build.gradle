@@ -1,0 +1,22 @@
+description = 'gradletasks :: test'
+
+apply plugin: 'eclipse'
+
+dependencies {
+  compile group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.junit4.runtime', version: '1.1.1200'
+  testCompile group: 'junit', name: 'junit', version: '4.13'
+  compile project(':gradletasks.core')
+}
+
+// This is a hack to change the gradle_scope in the classpath to allow tests
+// to be debugged via the java test extension
+eclipse.classpath.file.whenMerged {
+  entries.findAll { entry ->
+    entry.class.name in [
+      'org.gradle.plugins.ide.eclipse.model.Library',
+      'org.gradle.plugins.ide.eclipse.model.SourceFolder'
+    ]
+  }.each { entry ->
+    entry.entryAttributes['gradle_scope'] = 'test'
+  }
+}
