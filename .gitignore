@@ -1,1 +1,19 @@
+# Gradle
 .gradle
+
+# Output directories
+build/
+out/
+target/
+bin/
+
+# MacOS files
+.DS_Store
+
+# Eclipse files
+.settings
+.classpath
+.project
+
+# Java class files
+*.class
